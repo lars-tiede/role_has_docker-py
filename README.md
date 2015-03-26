@@ -21,7 +21,7 @@ subtree](http://blogs.atlassian.com/2013/05/alternatives-to-git-submodule-git-su
 however those shouldn't present a problem in this case.
 
 ```bash
-you@your-project-dir$ git subtree add --prefix roles/has_docker-py https://github.com/lars-tiede/role_has_docker-py.git master
+you@your-project-dir$ git subtree add --prefix roles/has_docker-py https://github.com/lars-tiede/role_has_docker-py.git master --squash
 ```
 
 Just choose the right prefix so that the role lands in the right directory
