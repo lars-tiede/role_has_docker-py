@@ -72,14 +72,16 @@ you@your-project-dir$ git submodule add [-b BRANCH] https://github.com/lars-tied
 ```
 
 When you want to update the submodule from its origin, first go into its
-directory and `git pull`.
+directory and `git pull`. Then, cd back into your project directory, `git add`
+the directory containing the submodule, and commit:
 
 ```bash
-you@roles/has_docker-py$ git pull
+you@your-project-dir$ cd roles/has_docker-py
+you@has_docker-py$ git pull
+you@has_docker-py$ cd ../..
+you@your-project-dir$ git add roles/has_docker-py
+you@your-project-dir$ git commit
 ```
-
-Then, cd back into your project directory and commit - the reference to the
-submodule will be updated.
 
 Users who clone and pull from your repository must do things a little
 differently, sadly. When cloning your repo, they must add the `--recursive`
